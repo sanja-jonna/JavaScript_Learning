@@ -48,17 +48,33 @@
     </div>
   </div>
 
-  <audio data-key="65" src="sounds/clap.wav"></audio>
-  <audio data-key="83" src="sounds/clap.wav"></audio>
-  <audio data-key="68" src="sounds/clap.wav"></audio>
-  <audio data-key="70" src="sounds/clap.wav"></audio>
-  <audio data-key="71" src="sounds/clap.wav"></audio>
-  <audio data-key="72" src="sounds/clap.wav"></audio>
-  <audio data-key="74" src="sounds/clap.wav"></audio>
-  <audio data-key="75" src="sounds/clap.wav"></audio>
-  <audio data-key="76" src="sounds/clap.wav"></audio>
+  <audio data-key="65" src="clap.wav"></audio>
+  <audio data-key="83" src="clap.wav"></audio>
+  <audio data-key="68" src="clap.wav"></audio>
+  <audio data-key="70" src="clap.wav"></audio>
+  <audio data-key="71" src="clap.wav"></audio>
+  <audio data-key="72" src="clap.wav"></audio>
+  <audio data-key="74" src="clap.wav"></audio>
+  <audio data-key="75" src="clap.wav"></audio>
+  <audio data-key="76" src="clap.wav"></audio>
 
 <script>
+  window.addEventListener('keydown', function(e) { 
+    
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); 
+    const key = document.querySelector(`audio[data-key="${e.keyCode}"]`); 
+    console.log(audio); 
+
+    if(!audio) { 
+      return; 
+    }
+
+    audio.currentTime = 0; 
+    audio.play(); 
+    key.classList.add('playing'); 
+
+  }); 
+
 
 </script>
 
